@@ -1,0 +1,22 @@
+# --- Cles : la cle privee ne doit JAMAIS etre commitee ---
+*.pem
+!keys/public.pem
+private*
+*.key
+
+# --- Etat et logs generes a l'execution ---
+client/state.json
+*.log
+audit.log
+
+# --- Python ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# --- Divers ---
+.DS_Store
+.idea/
+.vscode/
