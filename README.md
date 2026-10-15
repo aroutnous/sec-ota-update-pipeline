@@ -9,15 +9,10 @@ Le robot n'installe une mise a jour que si elle est **authentique** (signature R
 
 ## Equipe
 
-| Role | Perimetre | Dossiers principaux |
-| --- | --- | --- |
-| R1 - Serveur & crypto | Cles RSA, format de paquet, constructeur, serveur Flask | `server/`, `keys/` |
-| R2 - Client & log | Client robot, protection rollback, audit log, demo | `client/` |
-| R3 - Attaques 1 a 4 | Harnais de test, test de controle, attaques 1 a 4 | `attacks/`, `tests/` |
-| R4 - MITM & rapport | Proxy MITM (attaque 5), rapport, depot | `proxy/`, `docs/` |
-
-Membres : Niagale TRAORE, Killian OUASSENAN, Landry BAMBARA, Amara SOUNTOURA
-(a associer aux roles R1 a R4).
+1. Landry BAMBARA
+2. Niagale TRAORE
+3. Amara SOUNTOURA
+4. Killian OUASSENAN
 
 ## Structure du depot
 
