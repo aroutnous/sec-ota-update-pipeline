@@ -1,6 +1,6 @@
 # --- Cles : la cle privee ne doit JAMAIS etre commitee ---
+# Aucune cle n'est versionnee : chaque membre genere sa paire en local (OpenSSL).
 *.pem
-!keys/public.pem
 private*
 *.key
 
