@@ -3,7 +3,7 @@
 Capstone S9 - HESTIM Engineering School - 5A-IIA-Cybersecurite - Projet 3 (A2)
 Encadrant : Dr. Sridath TULA
 
-Prototype d'un pipeline de mise a jour OTA (over-the-air) securise pour un robot simule.
+Prototype d'un pipeline de mise a jour OTA (over-the-air) securisé pour un robot simulé.
 Le robot n'installe une mise a jour que si elle est **authentique** (signature RSA-PSS),
 **integre** (hash SHA-256) et **recente** (version superieure a la derniere appliquee).
 
