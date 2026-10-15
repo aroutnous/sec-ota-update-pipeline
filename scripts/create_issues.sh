@@ -2,7 +2,7 @@
 # Cree les milestones et les issues L1 a L11 avec la CLI GitHub (gh).
 # Usage : gh auth login  puis  bash scripts/create_issues.sh
 set -euo pipefail
-REPO="aroutnous/sec-ota-update-pipline"
+REPO="aroutnous/sec-ota-update-pipeline"
 
 for m in "S2 - interfaces et paquet signe" "S3 - serveur, client, gel du perimetre" \
          "Session 2 - code qui tourne" "Session 3 - 5 attaques documentees" "Session 4 - soutenance"; do
