@@ -4,8 +4,10 @@
 private*
 *.key
 
-# --- Etat et logs generes a l'execution ---
+# --- Fichiers generes a l'execution ---
+server/packages/
 client/state.json
+client/state.json.tmp
 *.log
 audit.log
 
