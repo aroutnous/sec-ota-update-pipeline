@@ -23,3 +23,4 @@ venv/
 .idea/
 .vscode/
 client/installed/
+proxy/captures/

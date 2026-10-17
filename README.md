@@ -22,7 +22,7 @@ client/    client robot : verification signature, hash, version ; audit log
 attacks/   scripts des 5 attaques
 proxy/     proxy man-in-the-middle (attaque 5)
 tests/     tests automatises et test de controle
-keys/      public.pem (versionnee) ; la cle privee reste locale, ignoree par git
+keys/      vide dans Git : chacun genere sa paire en local (decision 8)
 docs/      specifications, security design document, fiches d'attaque, rapport
 scripts/   utilitaires (creation des issues GitHub)
 ```
@@ -37,8 +37,32 @@ pip install -r requirements.txt
 
 ## Utilisation
 
-A completer au fur et a mesure (commandes pour generer les cles, lancer le serveur,
-lancer le client, rejouer les attaques, lancer les tests).
+Toutes les commandes se lancent depuis la racine du depot, environnement active
+(sous macOS, `python3` si `python` n'existe pas). Ports : serveur 5001, proxy 8080 (decision 9).
+
+```bash
+# 1. Cles, une seule fois, en local (jamais dans Git)
+openssl genrsa -out keys/private.pem 2048
+openssl rsa -in keys/private.pem -pubout -out keys/public.pem
+
+# 2. Publier des mises a jour signees (server/packages/)
+python -m server.package_builder --version 1 --text "firmware v1"
+python -m server.package_builder --version 2 --text "firmware v2"
+
+# 3. Terminal 1 : le serveur (http://127.0.0.1:5001)
+python -m server.app
+
+# 4. Terminal 2 : le robot (etat, journal et logiciel installe dans client/)
+python -m client.robot
+cat client/state.json client/audit.log
+
+# 5. Terminal 3 : le proxy MITM, puis le robot passe par lui
+python -m proxy.mitm_proxy --mode tamper-content     # ou transparent, drop
+python -m client.robot --server http://127.0.0.1:8080
+
+# 6. Tests automatiques (controle + attaques)
+python -m pytest -v
+```
 
 ## Les 5 attaques testees
 
