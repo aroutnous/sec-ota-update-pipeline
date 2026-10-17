@@ -28,7 +28,7 @@ Le proxy se positionne en intermédiaire pour intercepter les flux HTTP :
 | Bloquer les réponses | NETWORK_ERROR |
 
 ## 5. Outils
-- **Flask** : Utilisé pour implémenter le serveur proxy et recevoir les requêtes HTTP envoyées par le robot. Le port 5001 est configuré par défaut pour éviter l'interférence avec l'AirPlay Receiver de macOS.
+- **Flask** : utilisé pour le proxy, qui écoute sur le port 8080 et reçoit les requêtes du robot. Le vrai serveur tourne sur le port 5001 (décision 9).
 - **requests** : Utilisé par le proxy pour émettre à son tour les requêtes vers le vrai serveur distant et récupérer les charges utiles ou les métadonnées.
 
 ## 6. Limites
