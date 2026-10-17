@@ -22,6 +22,7 @@ Presents : Landry BAMBARA (R1), Niagale TRAORE (R2), Killian OUASSENAN (R3), Ama
 | 6 | Audit log | une ligne JSON par decision : ts (ISO 8601 UTC), version (null si illisible), decision (ACCEPTED, REJECTED, ERROR), reason ; ajout seul | Chaque ligne est une preuve autonome |
 | 7 | Etat du robot | {"last_applied_version": N}, 0 au depart, ecrit apres installation reussie, de facon atomique | Le robot n'oublie jamais sa version (risque 1 : replay, downgrade) |
 | 8 | Cles | aucune cle versionnee ; chaque membre genere sa paire en local avec OpenSSL | Une cle publique commune ne correspondrait pas aux cles privees locales |
+| 9 | Ports | serveur Flask sur 5001, proxy MITM sur 8080, robot sur http://127.0.0.1:5001 (ou :8080 pour la 5e attaque) | Sur macOS, le port 5000 est occupe par AirPlay Receiver ; un port commun evite les erreurs entre nos machines |
 
 ## Questions ouvertes pour le prof
 
