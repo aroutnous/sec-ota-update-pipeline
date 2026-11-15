@@ -41,6 +41,9 @@ Toutes les commandes se lancent depuis la racine du depot, environnement active
 (sous macOS, `python3` si `python` n'existe pas). Ports : serveur 5001, proxy 8080 (decision 9).
 
 ```bash
+# 0. Demo complete du chemin legitime en une commande
+python -m scripts.demo
+
 # 1. Cles, une seule fois, en local (jamais dans Git)
 openssl genrsa -out keys/private.pem 2048
 openssl rsa -in keys/private.pem -pubout -out keys/public.pem
