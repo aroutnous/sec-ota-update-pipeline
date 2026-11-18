@@ -6,7 +6,7 @@
 Faire installer un logiciel qui ne vient pas de l'éditeur. Sans la clé privée, l'attaquant ne peut faire que deux choses : **retirer** la signature (1a) ou **en inventer** une (1b). Les vérifications ciblées sont la **forme** du paquet (1a) puis la **signature** (1b).
 
 ## Methode
-Tests automatiques `tests/test_attaques_paquet.py` (fixtures : clés RSA en mémoire, serveur Flask réel sur un port libre, robot réel) :
+Tests automatiques `tests/test_attaques_paquet.py` (fixtures : clés RSA en mémoire ; appel direct de verify_package, sans réseau ni serveur)
 - `test_attaque_1a_signature_supprimee` : on supprime le champ `signature` du paquet JSON.
 - `test_attaque_1b_fausse_signature` : on met une signature faite d'octets au hasard encodés en base64.
 - `test_controle_mise_a_jour_valide_acceptee` : paquet correct, pour prouver que le robot n'est pas simplement « tout-rejetant ».
