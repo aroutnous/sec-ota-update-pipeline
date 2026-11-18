@@ -19,12 +19,12 @@ Le robot n'installe une mise a jour que si elle est **authentique** (signature R
 ```
 server/    serveur Flask (/latest_version, /download) et constructeur de paquet
 client/    client robot : verification signature, hash, version ; audit log
-attacks/   scripts des 5 attaques
+attacks/   vide : les attaques sont des tests automatiques dans tests/ (fiches dans docs/resultats/)
 proxy/     proxy man-in-the-middle (attaque 5)
 tests/     tests automatises et test de controle
 keys/      vide dans Git : chacun genere sa paire en local (decision 8)
 docs/      specifications, security design document, fiches d'attaque, rapport
-scripts/   utilitaires (creation des issues GitHub)
+scripts/   demo.py (demo en une commande), verifier_paquet.py, create_issues.sh
 ```
 
 ## Installation
